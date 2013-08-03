@@ -8,6 +8,51 @@
 </head>
 <body>
 
+	<div class="layout_top">
+		<div class="top_left">
+			<h1><a href="/">QM</a></h1>
+		</div>
+		<div class="top_center">
+			<ul class="nav">
+				<% if (controller.controller_name=='welcome') %>
+					<li id="nav_selected"><%= link_to 'Portada', root_path %></li>
+				<% else %>
+					<li id="nav"><%= link_to 'Portada', root_path %></li>
+				<% end %>
+
+				<% if (controller.controller_name=='photos') %>
+					<li id="nav_selected"><%= link_to 'Fotos', photos_path %></li>
+				<% else %>
+					<li id="nav"><%= link_to 'Fotos', photos_path %></li>
+				<% end %>
+				<% if (controller.controller_name=='people') %>
+					<li id="nav_selected"><%= link_to 'Personas', people_path %></li>
+				<% else %>
+					<li id="nav"><%= link_to 'Personas', people_path %></li>
+				<% end %>
+				<li id="nav">Entidades</li>
+			</ul>
+		</div>
+
+	<div class="top_right">
+		<div class="up">
+		  <% if user_signed_in? %>
+				<%= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(current_user.email.downcase)}.png?s=30" %>
+				<%= current_user.email %><br />
+				Not you?
+		    <%= link_to "Sign out", destroy_user_session_path %>
+		  <% else %>
+		    <%= link_to "Sign up", new_user_registration_path %> or
+		    <%= link_to "Sign in", new_user_session_path %>
+		  <% end %>
+		</div>
+		<div class="down">
+			<%= form_tag("/search", :method => "get") do %>
+        <%= text_field_tag 'buscar', 'Buscar', :class => "search_inputText" %>
+        <%= submit_tag "Buscar", :class => "button" %>
+      <% end %>
+		</div>
+	</div>
   <h3><%= link_to 'Quien Manda', root_path %></h3>
   <h3><%= link_to 'Admin Interface', rails_admin_path %></h3>
 

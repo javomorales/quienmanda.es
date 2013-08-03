@@ -12,6 +12,77 @@
  *= require_tree .
  */
 
+/* General */
+div,ul,li,ol,h1,h2,h3,h4,h5,h6,form,fieldset,p{margin:0;padding:0;}
+body {margin:0; padding:0; font:normal "Arial";}
+
+/* Layout Top
+div.layout_top {background:#D42713; width:100%; height:100px; position: relative;}
+div.layout_top div.top_left {float:left; width:25%; height:100px;}
+div.layout_top div.top_center {margin: 0 auto; width:50%; height: 90px;}
+div.layout_top div.top_right {float: left; width:25%; height:90px;}
+*/
+
+/* Layout Top */
+div.layout_top {background:#D42713; width:100%; height:100px;}
+div.layout_top div.top_left {float:left; width:20%; padding:10px 0 0 25px;}
+div.layout_top div.top_left h1 a {font: 75px 'Arial'; color:white; text-decoration:none;}
+
+div.layout_top div.top_center {float: left; width:55%; height: 90px; padding:10px 0 0 0;}
+
+div.layout_top div.top_center ul.nav {margin: 0 auto; position: relative;height:50px; padding: 15px 0 0 0;}
+
+div.layout_top div.top_center ul.nav li#nav {float:left; list-style: none; font: 25px normal 'Arial'; color:white; text-decoration:none; width:auto; padding: 10px 20px 10px 20px;}
+
+div.layout_top div.top_center ul.nav li#nav_selected {float:left; list-style: none; font: 25px normal 'Arial'; color:white; width:auto; padding: 10px 20px 10px 20px; border:1px solid white;}
+
+div.layout_top div.top_center ul.nav li a {text-decoration: none; color:white;}
+
+div.layout_top div.top_right {float:left; width:20%; height:100px; font: 15px normal 'Arial'; padding: 5px 0 0 0;}
+div.layout_top div.top_right div.up {height:50px;font: 15px normal 'Arial'; padding: 3px 0 0 0;}
+div.layout_top div.top_right div.up a {text-decoration: none; color: white;}
+
+div.layout_top div.top_right div.down {height:50px; padding: 5px 0 0 0;}
+
+.search_inputText {
+  display: inline-block;
+  width: auto;
+	height: 15px;
+  overflow: visible;
+  padding: .3em 1em;
+  color: #121212;
+  text-decoration: none;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.10);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.10);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  position: relative;
+  cursor: pointer;
+  font-family: Arial;
+}
+
+.button {
+    background: #EBEBEB;
+		color: #424242;
+    display: inline-block;
+    width: auto;
+    overflow: visible;
+    padding: .3em 1em;
+    text-decoration: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.10);
+    -webkit-box-shadow: 0 .1em .3em rgba(0, 0, 0, 0.10);
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.10);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    position: relative;
+    cursor: pointer;
+    font-family: Arial;
+    font-weight: normal;
+}
+
 /* User registration */
 ul.hmenu {
   list-style: none; 
