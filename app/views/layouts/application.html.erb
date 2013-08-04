@@ -40,7 +40,7 @@
 				<%= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(current_user.email.downcase)}.png?s=30" %>
 				<%= current_user.email %><br />
 				Not you?
-		    <%= link_to "Sign out", destroy_user_session_path %>
+		    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 		  <% else %>
 		    <%= link_to "Sign up", new_user_registration_path %> or
 		    <%= link_to "Sign in", new_user_session_path %>
@@ -63,7 +63,43 @@
   
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <%= yield %>
 
+	<div class="main">
+  	<%= yield %>
+	</div>
+
+	<div class="layout_bottom">
+		<ul>
+			<li class="elto"><%= link_to 'Portada', root_path %></li>
+			<li class="elto">Artículos</li>
+			<li class="elto"><%= link_to 'Fotos', photos_path %></li>
+			<li class="elto"><%= link_to 'Personas', people_path %></li>						
+			<li class="elto">Entidades</li>						
+		</ul>
+		<ul>
+			<li class="elto">Quiénes Somos</li>
+			<li class="elto">Contacto</li>
+			<li class="elto">Metodología</li>
+			<li class="elto">Agradecimientos</li>
+			<li class="elto">Términos legales</li>
+		</ul>
+		<ul>
+			<li class="elto">twitter</li>
+			<li class="elto">RSS</li>
+			<li class="elto">Quien_Manda</li>
+			<li class="elto">Quién_Manda</li>
+		</ul>
+		<ul>
+			<li class="elto">Un proyecto de</li>
+			<li class="elto"><%= image_tag "/logo_civio.png", size: "180x70" %></li>
+		</ul>
+		<ul>
+			<li class="elto">Con la ayuda de</li>
+			<li class="elto_user">
+<%= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest("david.cabo@gmail.com")}.png?s=60", :class => 'user' %>
+<%= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest("david.cabo@gmail.com")}.png?s=60", :class => 'user' %>
+<%= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest("david.cabo@gmail.com")}.png?s=60", :class => 'user' %></li>
+		</ul>
+	</div>
 </body>
 </html>
